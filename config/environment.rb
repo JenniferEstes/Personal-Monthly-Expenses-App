@@ -1,7 +1,7 @@
 #take environment var Sinatra, if we have it, and if it hasn't been declared, it's falsey and it's value will set to the str developement
 ENV['SINATRA_ENV'] ||= "development"
 
-require 'bundler'
+require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
 #connection to db
