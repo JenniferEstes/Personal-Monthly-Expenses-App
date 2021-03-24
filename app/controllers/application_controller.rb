@@ -13,4 +13,8 @@ class ApplicationController < Sinatra::Base
     "hello world"
   end
 
+  get '/expenses/new' do
+    erb :'expenses/new'
+  end
+
 end
