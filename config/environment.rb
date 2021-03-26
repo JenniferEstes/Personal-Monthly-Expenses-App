@@ -12,3 +12,5 @@ ActiveRecord::Base.establish_connection({
 
 require './app/controllers/application_controller'
 require_all 'app'
+#See SQL queries that are being made while navigating app
+ActiveRecord::Base.logger = Logger.new(STDOUT)
