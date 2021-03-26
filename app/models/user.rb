@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  has many :expenses
+  has_many :expenses
 end
