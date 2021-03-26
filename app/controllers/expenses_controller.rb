@@ -8,7 +8,7 @@ class ExpensesController < ApplicationController
     expense = Expense.new (params["expense"])
     if expense.save
       redirect '/expenses/#{expense.id}'
-    else redirect "/expenses/new"
+    else redirect '/expenses/new'
     end
   end
   #read all
@@ -40,15 +40,15 @@ class ExpensesController < ApplicationController
     expense = Expense.find_by_id(params[:id])
     expense.destroy
 
-    redirect "/expenses"
+    redirect '/expenses'
   end
   #delete expense (save in db)
   patch '/expenses/:id' do
     expense = Expense.find_by_id(params[:id])
     if expense.update(params["expense"])
-      redirect "/expenses/#{expense.id}"
+      redirect '/expenses/#{expense.id}'
     else
-      redirect "/expense/#{expense.id}/edit"
+      redirect '/expense/#{expense.id}/edit'
     end
   end
 end

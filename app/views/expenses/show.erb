@@ -1,6 +1,6 @@
 <%= @expense.description %>
 
-<form action="/expenses/<%= @expense.id %>" method="POST">
+<form action="/expenses/<%= @expense.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Expense">
 </form>

@@ -1,4 +1,4 @@
-<form action="/expenses/<%= @expense.id %>" method="POST">
+<form action="/expenses/<%= @expense.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <input type="datetime" name="expense[date]" value=<%= @expense.date %>><br>
   <textarea name="expense[description]" value=<%= @expense.description %>></textarea><br>
