@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_235438) do
+ActiveRecord::Schema.define(version: 2021_03_26_185603) do
 
   create_table "expenses", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
     t.string "description"
     t.float "amount"
     t.integer "user_id"

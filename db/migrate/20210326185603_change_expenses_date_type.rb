@@ -1,10 +1,5 @@
 class ChangeExpensesDateType < ActiveRecord::Migration[6.1]
   def change
-    create_table :expenses do |t|
-      t.date :date
-      t.string :description
-      t.float :amount
-      t.integer :user_id
-    end
+    change_column :expenses, :date, :date
   end
 end
