@@ -1,6 +1,9 @@
-<%= @expense.description %>
+<%= @expense.date.to_s %><br />
+<%= @expense.description %><br />
+<%= @expense.amount %>
 
-<form action="/expenses/<%= @expense.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete Expense">
+<form action="/expenses/<%= @expense.id %>" method="post"/>
+  <input type="hidden" name="_method" value="delete"/>
+  <input type="submit" value="Edit Expense"/>
+  <input type="submit" value="Delete Expense"/>
 </form>

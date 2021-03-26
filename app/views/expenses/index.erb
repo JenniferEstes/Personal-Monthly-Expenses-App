@@ -1,5 +1,7 @@
 <ul>
   <% @expenses.each do |e| %>
+    <li><%= e.datetime %></li>
     <li><%= e.description %></li>
+    <li><%= e.amount %></li>
   <% end %>
 </ul>
