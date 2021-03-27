@@ -1,7 +1,7 @@
-<form action="/expenses/<%= @expense.id %>" method="post"/>
-  <input type="hidden" name="_method" value="patch"/>
-  <input type="date" name="expense[date]" value=<%= @expense.date %>/><br>
-  <textarea name="expense[description]" value=<%= @expense.description %>/><br>
-  <input type="float" name="expense[amount]" value=<%= @expense.amount %>/><br>
-  <input type="submit" value="Update Expense"/>
+<form action="/expenses/<%= @expense.id %>" method="post">
+  <input type="hidden" name="_method" value="patch"/> <!-- When hidden is read, post method is replaced  with new value, patch -->
+  <input type="date" name="expense[date]" value="<%= @expense.date %>"/><br />
+  <textarea name="expense[description]"><%= @expense.description %></textarea><br />
+  <input type="float" name="expense[amount]" value="<%= @expense.amount %>"/><br />
+  <input type="submit" value="Edit Expense"/>
 </form>
