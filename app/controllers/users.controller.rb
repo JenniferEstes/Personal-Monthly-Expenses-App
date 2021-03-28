@@ -6,18 +6,17 @@ class UsersController < ApplicationController
     end
   #
     post '/signup' do
-      session = Session.new(params)
-      if session.username.empty? || session.password.empty? || Session.find_by(username: params[:username])
-        redirect "/users/signup"
-      else
+      user = User.new(params[:user])
         #log user in
-        session.save
-        session[:user_id] = user.id
-        redirect '/expenses'
-      end
+        if user.save
+          session[:user_id] = user.id
+          redirect "/expenses"
+        else
+          redirect "/signup"
+        end
     end
 
   get '/signout' do
-    erb :"sessions/signout"
+    erb :"users/signout"
   end
-  end
+end
