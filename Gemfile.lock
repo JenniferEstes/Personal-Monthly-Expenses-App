@@ -120,7 +120,6 @@ DEPENDENCIES
   bcrypt
   capybara
   database_cleaner!
-  dotenv (~> 2.7)
   pry
   rack-test
   rake (~> 13.0.3)
