@@ -1,14 +1,16 @@
 class SessionsController < ApplicationController
   # login (like read)
   get '/login' do
+    redirect_if_logged_in
     erb :'sessions/login'
   end
 
   post '/login' do
-    #returns nill or user object
+    redirect_if_logged_in
+    #returns nil or user object
     user = User.find_by(username: params[:username])
-    if user && user.authenticate(params[:username][:password])
-      session[:user_id] = user.id
+    if user && !!user.authenticate(params[:password])
+      session["user_id"] = user.id
       redirect "/expenses"
     else
       redirect "/login"
@@ -17,7 +19,18 @@ class SessionsController < ApplicationController
 
   # logout (like delete)
   delete '/logout' do
-    session.clear
-    redirect "/login"
+    if logged_in?
+      session.clear
+      redirect "/login"
+    else
+      redirect_if_not_logged_in
+    end
+  end
+
+  private
+  def redirect_if_logged_in
+    if logged_in?
+      redirect "/expenses"
+    end
   end
 end

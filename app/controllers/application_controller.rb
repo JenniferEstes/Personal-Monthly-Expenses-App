@@ -5,7 +5,6 @@ class ApplicationController < Sinatra::Base
   configure do
     # set :public_folder, 'public'
     set :views, 'app/views'
-    enable :sessions
     set :session_secret, "secret"
   end
 
@@ -13,29 +12,26 @@ class ApplicationController < Sinatra::Base
     erb :"users/signup"
   end
 
-    # if user.logged_id
-    #   erb :'expenses/index'
-    # else
-    #   erb :'session/login'
-    # end
+  helpers do
+    def current_user
+      @current_user ||= User.find_by_id(session["user_id"])
+    end
 
-    helpers do
-      def current_user
-         @current_user ||= User.find_by_id(session["user_id"])
-      end
+    def logged_in?
+      !!current_user
+    end
 
-      def logged_in?
-        !!current_user
+    def redirect_if_not_logged_in
+      if !logged_in?
+        redirect "/login"
       end
     end
 
-    #   def redirect_if_not_logged_in
-    #     redirect "/login" if !logged_in?
-    #   end
-    #
-    #   def redirect_if_logged_in
-    #     redirect "/movie" if logged_in?
-    #   end
-    # end
+    def redirect_if_logged_in
+      if logged_in?
+        redirect "/expenses"
+      end
+    end
 
+  end
 end
