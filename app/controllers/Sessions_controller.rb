@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
 
   # logout (like delete)
-    get '/logout' do
+  delete '/logout' do
       erb :"sessions/logout"
     end
 end
