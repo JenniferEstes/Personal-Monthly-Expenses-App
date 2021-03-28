@@ -3,7 +3,7 @@
 <%= @expense.amount %>
 <h2><%= @expense.id %></h2>
 
-<a href="/expenses/<%= @expense.id %>/edit">Edit Expense</a>
+<a href="/expenses/<%= @expense.id %>/edit"><button type="button">Edit Expense</button></a>
 
 <form action="/expenses/<%= @expense.id %>" method="post">
 <input type="hidden" name="_method" value="delete"/>

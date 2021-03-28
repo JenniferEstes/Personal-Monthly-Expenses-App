@@ -8,12 +8,13 @@ class UsersController < ApplicationController
     post '/signup' do
       user = User.new(params[:user])
         #log user in
-        if user.save
-          session[:user_id] = user.id
-          redirect "/expenses"
-        else
-          redirect "/signup"
-        end
+      if user.username.blank? || user.password.blank? || user.password_confirmation.blank?
+        redirect "/signup"
+      else
+        user.save
+        session[:user_id] = user.id
+        redirect "/expenses"
+      end
     end
 
   get '/signout' do

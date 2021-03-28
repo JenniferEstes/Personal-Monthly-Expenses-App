@@ -5,10 +5,19 @@ class SessionsController < ApplicationController
   end
 
   post '/login' do
+    #returns nill or user object
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:username][:password])
+      session[:user_id] = user.id
+      redirect "/expenses"
+    else
+      redirect "/login"
+    end
   end
 
   # logout (like delete)
   delete '/logout' do
-      erb :"sessions/logout"
-    end
+    session.clear
+    redirect "/login"
+  end
 end
