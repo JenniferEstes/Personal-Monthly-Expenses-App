@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'sinatra'
 gem "activerecord", "~> 6.1"
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord' #library is called this
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord' #library is called this 
 gem 'require_all'
 gem 'pry'
 gem 'bcrypt'

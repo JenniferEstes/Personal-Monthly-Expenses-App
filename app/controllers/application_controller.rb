@@ -3,29 +3,9 @@ require './config/environment'
 class ApplicationController < Sinatra::Base
 
   configure do
-    set :public_folder, 'public'
+    # set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "auth_demo_lv"
+    set :session_secret, "secret"
   end
-
-  # get "/" do
-  #   erb :'expenses/new'
-  # end
-
-  # get '/expenses/new' do
-  #   "Hello World"
-  # end
-
-#   get '/expenses/index' do
-#     "Hello World"
-#   end
-#
-# get '/expenses/edit' do
-#     "Hello World"
-#   end
-#
-#   get '/expenses/show' do
-#     "Hello World"
-#   end
 end
