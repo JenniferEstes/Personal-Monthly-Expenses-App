@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   # login (like read)
   get '/login' do
     redirect_if_logged_in
-    erb :'sessions/login'
+    erb :'expenses/login'
   end
 
   post '/login' do
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   delete '/logout' do
     if logged_in?
       session.clear
-      redirect "/login"
+      redirect "/signup"
     else
       redirect_if_not_logged_in
     end

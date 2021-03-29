@@ -71,5 +71,4 @@ class ExpensesController < ApplicationController
         redirect"/expenses"
       end
   end
-
 end
