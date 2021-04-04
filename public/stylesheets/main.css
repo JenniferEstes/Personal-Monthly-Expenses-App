@@ -2,6 +2,7 @@
   background-color: #eec0c6;
   background: linear-gradient(to bottom right, #2f9eff 0%, #7921a4 100%);
 }
+
 .nav-bar {
   background-color: #Light;
 }
@@ -10,7 +11,6 @@ form {
   width: 30%;
   margin: 0 auto;
 }
-
 
 @media screen {
   /* --- Reset Styles --- */
