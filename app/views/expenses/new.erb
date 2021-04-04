@@ -1,6 +1,6 @@
 <form action="/expenses" method="post">
-  <input type="date" name="expense[date]" placeholder=date><br />
-  <textarea name="expense[description]" placeholder=description></textarea><br />
-  <input type="float" name="expense[amount]" placeholder=amount/><br />
-  <input type="submit" value="Create Expense"/>
+  <input type="date" class="form-control" id="autoSizingInput" name="expense[date]" placeholder=date><br />
+  <textarea class="form-control" id="autoSizingInput" name="expense[description]" placeholder=description></textarea><br />
+  <input type="float" class="form-control" id="autoSizingInput" name="expense[amount]" placeholder=amount><br />
+  <input type="submit" class="btn btn-outline-light" value="Create Expense"/>
 </form>

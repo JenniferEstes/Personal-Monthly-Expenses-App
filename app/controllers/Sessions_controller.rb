@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
   end
 
   # logout (like delete)
-  delete '/logout' do
+  get '/logout' do
     if logged_in?
       session.clear
       redirect "/signup"

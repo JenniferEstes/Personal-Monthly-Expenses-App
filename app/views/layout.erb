@@ -7,9 +7,9 @@
       <body>
 
   <!--Nav bar-->
-        <nav class="navbar navbar-expand-lg navbar-light navbar" style="background-color: light">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar" style="background-color: light">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">MonthlyExpensesApp</a>
+            <a class="navbar-brand" href="/">MonthlyExpensesApp</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -17,44 +17,37 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             </ul>
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">View All</a>
-                <a class="nav-link">Create Expense</a>
-              </div>
-
+              <% if logged_in? %>
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link" href="/expenses">View All</a>
+              <a class="nav-link" href="/expenses/new">Create Expense</a>
+              <% end %>
+            </div>
             <!--Log out far right on nav bar-->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
               <ul class="navbar-nav">
+                <% if logged_in? %>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Log Out</a>
+                  <a class="nav-link" href="/logout">Log Out</a>
                 </li>
               </ul>
+                  <% end %>
             </div>
             </div>
           </div>
         </nav>
 
         <!--Sticky Bottom-->
-        <nav class="navbar fixed-bottom navbar-light" style="background-color: light">
+        <nav class="navbar fixed-bottom navbar-dark" style="background-color: light">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">MonthlyExpensesApp</a>
+            <a class="navbar-brand" href="/">MonthlyExpensesApp</a>
           </div>
         </nav>
 
   <!--alignment-->
-  <div class="container-sm"
-  </div>
-
+        <div class="container-sm"
+        </div>
 
             </body>
       <%= yield %>
-
-        </html>
-
-      <!-- Conditional rendering-->
-      <% if logged_in? %>
-      <form action="/logout" method="post">
-        <input type="hidden" name="_method" value="delete" />
-        <input type="submit" value="Logout" />
-      </form>
-      <% end %>
+  </html>

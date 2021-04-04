@@ -1,11 +1,19 @@
-<ul>
+<table class="expense-table">
+  <tr>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Amount</th>
+  </tr>
   <% @expenses.each do |e| %>
-    <li><%= e.date %></li>
-    <li><%= e.description %></li>
-    <li><%= e.amount %></li>
+  <tr>
+    <td><%= e.date %></td>
+    <td><%= e.description %></td>
+    <td><%= e.amount %></td>
+  </tr>
   <% end %>
-</ul>
-<a href="/expenses/new"><button type="button">Create Expense</button></a>
+</table>
+
+<a href="/expenses/new"><button type="button" class="btn btn-outline-light">Create Expense</button></a>
 
 
 

@@ -1,11 +1,11 @@
-<%= @expense.date.to_s %><br />
-<%= @expense.description %><br />
+<h5><%= @expense.id %></h5>
+<%= @expense.date.to_s %>
+<%= @expense.description %>
 <%= @expense.amount %>
-<h2><%= @expense.id %></h2>
 
-<a href="/expenses/<%= @expense.id %>/edit"><button type="button">Edit Expense</button></a>
+<a href="/expenses<%= @expense.id %>/edit"><button type="button" class="btn btn-outline-light">Edit Expense</button></a>
 
-<form action="/expenses/<%= @expense.id %>" method="post">
+<form action="/expenses<%= @expense.id %>" method="post">
 <input type="hidden" name="_method" value="delete"/>
-<input type="submit" value="Delete Expense"/>
+<input type="submit" class="btn btn-outline-light" value="Delete Expense"/>
 </form>

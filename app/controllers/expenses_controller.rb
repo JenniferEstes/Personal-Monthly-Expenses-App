@@ -9,7 +9,6 @@ class ExpensesController < ApplicationController
   #create (save in db)
   post '/expenses' do
     redirect_if_not_logged_in
-
     expense = current_user.expenses.build(params[:expense])
       if expense.save
         redirect "/expenses/#{expense.id}"

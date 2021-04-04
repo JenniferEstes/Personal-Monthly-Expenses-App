@@ -1,12 +1,12 @@
 <form action="/signup" method="post">
-  <input type="text" name="user[username]" placeholder="Username"/><br>
-  <input type="password" name="user[password]" placeholder="Password"/><br>
-  <input type="password" name="user[password_confirmation]" placeholder="Confirm Password"/><br>
-  <input type="submit" value="Create Account"/><br><br>
+  <input type="text" class="form-control" id="autoSizingInput" name="user[username]" placeholder="Username"/><br>
+  <input type="password" class="form-control" id="autoSizingInput" name="user[password]" placeholder="Password"/><br>
+  <input type="password" class="form-control" id="autoSizingInput" name="user[password_confirmation]" placeholder="Confirm Password"/><br>
+  <input type="submit" class="btn btn-outline-light" value="Create Account"/><br><br>
 </form>
 
 <form action="/login" method="post">
-    <input type="text" name="username" placeholder="Enter Username"/><br>
-    <input type="password" name="password" placeholder="Enter Password"/><br>
-    <input type="submit" value="Login"/>
+    <input type="text" class="form-control" id="autoSizingInput" name="username" placeholder="Enter Username"/><br>
+    <input type="password" class="form-control" id="autoSizingInput" name="password" placeholder="Enter Password"/><br>
+    <input type="submit" class="btn btn-outline-light" value="Login"/>
 </form>
